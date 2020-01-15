@@ -4,7 +4,8 @@ import React, {Suspense} from "react";
 import ReactDOM from "react-dom";
 import { Router, View, useCurrentRoute } from "react-navi";
 import "./index.css";
-import { routes2 as routes } from "./routes";
+// import { routes2 as routes, Xxx } from "./routes";
+import routes from "./routes";
 import { App } from "./App";
 import * as serviceWorker from "./serviceWorker";
 
@@ -45,10 +46,9 @@ register({
     renderer(
       // <Router navigation={navigation}>
       <Router routes={routes}>
-        {/* <App /> */}
          {/* some と some2 で有効 */}
         <Suspense fallback={<div>xxxxxxxxxxxx</div>}>
-          <View/>
+          <App />
         </Suspense>
       </Router>,
       document.getElementById("root")

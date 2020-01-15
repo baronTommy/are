@@ -2,6 +2,7 @@ import React from "react";
 import { mount, route, lazy, compose, withView } from "navi";
 import { Layout } from "../component/other/Layout";
 import { View, useCurrentRoute } from "react-navi";
+import { animated, useTransition } from 'react-spring'
 
 // 手抜きですたい 🐿🐿🐿🐿🐿🐿🐿🐿🐿🐿🐿🐿🐿🐿🐿🐿🐿🐿
 const are = async () => ({
@@ -43,7 +44,8 @@ const m = mount({
   "/some2": lazy(() => import("../component/environments/Some2"))
 });
 
-const Xxx = withView(req => {
+
+export const Xxx = withView(req => {
   // Check if the current page is an index page by comparing the remaining
   // portion of the URL's pathname with the index page paths.
   let isViewingIndex = req.path === "/" || /^\/page\/\d+\/$/.test(req.path);

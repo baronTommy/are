@@ -49,12 +49,15 @@ const MainView: FC<MainViewProps> = ({ loadingRoute }) => (
 );
 
 export const App: FC = () => {
+  const loadingRoute = useLoadingRoute()
   return (
     <div className="App">
       <Header />
+      {loadingRoute? '✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️ 処理中':''}
+
       <MainView
         {...{
-          loadingRoute: useLoadingRoute()
+          loadingRoute
         }}
       />
     </div>
