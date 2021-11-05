@@ -1,16 +1,12 @@
-name: TDG
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: Run tdg-github-action
-      uses: ribtoks/tdg-github-action@master
-      with:
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        REPO: ${{ github.repository }}
-        SHA: ${{ github.sha }}
-        REF: ${{ github.ref }}
-       
-        
+    name: "Workflow"
+    on: ["push"]
+    jobs:
+      build:
+        runs-on: "ubuntu-latest"
+        steps:
+          - uses: "actions/checkout@master"
+          - name: "TODO to Issue"
+            uses: "alstr/todo-to-issue-action@v4.4"
+            id: "todo"
+            with:
+              TOKEN: ${{ secrets.AUTO_ASSIGN }}
